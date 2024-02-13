@@ -183,8 +183,12 @@ class DrawRing extends CustomPainter {
     }
 
     if (_tip != null) {
-      canvas.drawImage(
-          _tip!, Offset(x - _tip!.width / 2, y - _tip!.height / 2), Paint());
+      paintImage(
+        canvas: canvas,
+        rect: Rect.fromCenter(center: Offset(x, y), width: 14, height: 14),
+        image: _tip!,
+        fit: BoxFit.cover,
+      );
     }
   }
 
